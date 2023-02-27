@@ -43,6 +43,10 @@ const pool = mariadb.createPool({
         connectionLimit:5
 });
 
+app.get('/', (req,res) => {
+    res.send("Welcome to Revanth Kumar Galla's Assignment9 to verify the assignment go to http://137.184.133.59:3000/say/?keyword=niners");
+})
+
 
 app.get('/say', (req,res) => {
     axios.get(`https://q7l9sc1wg3.execute-api.us-east-2.amazonaws.com/prod/myfunction/?keyword=${req.query.keyword}`)
